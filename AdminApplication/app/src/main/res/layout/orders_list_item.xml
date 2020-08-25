@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/parent_layout_margin">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ordersItemStatusIV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/vertical_spacing_between_views"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ordersItemOrderedByTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/vertical_spacing_between_views"
+            android:text="Ordered By:"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintLeft_toRightOf="@id/ordersItemStatusIV"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ordersItemStatusTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/vertical_spacing_between_views"
+            app:layout_constraintTop_toBottomOf="@id/ordersItemOrderedByTV"
+            app:layout_constraintLeft_toRightOf="@id/ordersItemStatusIV"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:text="Status: In Transit"/>
+
+        <TextView
+            android:id="@+id/ordersTrackingNumberTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello"
+            app:layout_constraintTop_toBottomOf="@id/ordersItemStatusTV"
+            app:layout_constraintLeft_toRightOf="@id/ordersItemStatusIV"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_margin="@dimen/vertical_spacing_between_views"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

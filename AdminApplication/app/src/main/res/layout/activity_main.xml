@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/parent_layout_margin"
+            android:layout_marginTop="@dimen/parent_layout_margin"
+            android:layout_marginEnd="@dimen/parent_layout_margin"
+            android:layout_marginBottom="@dimen/parent_layout_margin"
+            android:orientation="vertical"
+            tools:context=".view.MainActivity">
+
+            <ImageView
+                android:id="@+id/boxIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/box_128"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/homeScreenScanBarcodeBtn"
+                style="@style/CustomButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="deliveryScanClicked"
+                android:text="Delivery Scan"
+                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintTop_toBottomOf="@+id/homeScreenShowOrdersBtn"
+                tools:layout_editor_absoluteX="4dp" />
+
+            <Button
+                android:id="@+id/homeScreenPossessionScanBtn"
+                style="@style/CustomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="possessionScanClicked"
+                android:text="Possession Scan"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/homeScreenShowOrdersBtn"
+                app:layout_constraintTop_toBottomOf="@+id/boxIV" />
+
+
+            <Button
+                android:id="@+id/homeScreenShowOrdersBtn"
+                style="@style/CustomButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="showOrdersClicked"
+                android:text="@string/show_orders_btn_txt"
+                app:layout_constraintBottom_toTopOf="@+id/homeScreenScanBarcodeBtn"
+                app:layout_constraintTop_toBottomOf="@+id/homeScreenPossessionScanBtn"
+                tools:layout_editor_absoluteX="4dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF0000"
+                android:onClick="logoutClicked"
+                android:text="LOGOFF"
+                android:textColor="#ffffff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/homeScreenScanBarcodeBtn" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+</ScrollView>
+

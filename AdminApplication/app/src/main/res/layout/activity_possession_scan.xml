@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.UpdateStatus.ScanActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="@dimen/vertical_spacing_between_views"
+            android:text="Possession Scans"
+            android:id="@+id/possessionScanTV"
+            android:layout_alignParentTop="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of scanned barcodes: "
+            android:layout_centerHorizontal="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_below="@id/possessionScanTV"
+            android:id="@+id/countBarcodesTV"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/barcodeRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/countBarcodesTV"
+            android:layout_above="@id/possessionScanAddScanFAB"
+            tools:listitem="@layout/barcode_item" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:text="NO BARCODES SCANNED YET"
+            android:visibility="visible"
+            android:layout_centerInParent="true"
+            android:id="@+id/possessionScanNoBarcodeTV"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TAKE POSSESSION"
+            android:onClick="updateClicked"
+            style="@style/CustomButton"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/possessionScanTakePossessionBtn"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="45dp"
+            android:layout_marginRight="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:id="@+id/possessionScanAddScanFAB"
+            android:src="@drawable/ic_add_black_24dp"
+            android:clickable="true"
+            android:onClick="addScanClicked"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+</layout>
+

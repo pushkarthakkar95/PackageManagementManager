@@ -1,0 +1,2 @@
+rootProject.name='PackageManager'
+include ':app'
